@@ -107,7 +107,7 @@ See README-longer.md for more details on debugging & development.
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 0;
+  return ~(x & y) & ~(~x & ~y);
 }
 /*
  * isTmax - returns 1 if x is the maximum, two's complement number,
