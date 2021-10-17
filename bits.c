@@ -127,7 +127,9 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 0;
+  int y = ((0xAA << 8) | 0xAA);
+  y = (y << 16) | y;
+  return !((x & y) ^ y);
 }
 /* 
  * copyLSB - set all bits of result to least significant bit of x
