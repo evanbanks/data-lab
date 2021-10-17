@@ -151,7 +151,7 @@ int copyLSB(int x) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-  return 0;
+  return !(x ^ ((x << (33 + ~n)) >> (33 + ~n)));
 }
 /* 
  * isNegative - return 1 if x < 0, return 0 otherwise 
