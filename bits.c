@@ -172,7 +172,7 @@ int isNegative(int x) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-  return 0;
+  return !(((x>>31)^((x+y)>>31))&!((x>>31)^(y>>31)));
 }
 /* 
  * isGreater - if x > y  then return 1, else return 0 
