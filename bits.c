@@ -161,7 +161,7 @@ int fitsBits(int x, int n) {
  *   Rating: 2
  */
 int isNegative(int x) {
-  return 0;
+  return (x >> 31) & 0x1;
 }
 /* 
  * addOK - Determine if can compute x+y without overflow
