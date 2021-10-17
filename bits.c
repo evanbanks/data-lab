@@ -139,7 +139,7 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int copyLSB(int x) {
-  return 0;
+  return (x << 31) >> 31;
 }
 /* 
  * fitsBits - return 1 if x can be represented as an 
