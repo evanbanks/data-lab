@@ -182,7 +182,10 @@ int addOK(int x, int y) {
  *   Rating: 3
  */
 int isGreater(int x, int y) {
-  return 0;
+  int x_sign = (x >> 31) & 0x1;
+  int same_sign = !(x_sign ^ ((y >> 31) & 0x1));
+  int y_x_sign = ((y + ~x + 1) >> 31) & 0x1;
+  return (same_sign & y_x_sign) | (!same_sign & !x_sign);
 }
 /* 
  * rotateLeft - Rotate x to the left by n
