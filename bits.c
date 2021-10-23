@@ -193,8 +193,7 @@ int isGreater(int x, int y) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-  int mask = (((((0x7f << 8) | 0xff) << 8) | 0xff) << 8) | 0xff;
-  return (((x >> 1) & mask) >> (n +1 +~1)) | (x << n);
+  return 0;
 }
 /* 
  * greatestBitPos - return a mask that marks the position of the
@@ -205,7 +204,13 @@ int rotateLeft(int x, int n) {
  *   Rating: 4 
  */
 int greatestBitPos(int x) {
-  return 0;
+  int not_msb = ~(0x1 << 31);
+  x |= (x >> 1);
+  x |= (x >> 2);
+  x |= (x >> 4);
+  x |= (x >> 8);
+  x |= (x >> 16);
+  return x + 1 + ~(x >> 1 & not_msb);
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
