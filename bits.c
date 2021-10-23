@@ -193,7 +193,8 @@ int isGreater(int x, int y) {
  *   Rating: 3 
  */
 int rotateLeft(int x, int n) {
-  return 0;
+  int mask = (((((0x7f << 8) | 0xff) << 8) | 0xff) << 8) | 0xff;
+  return (((x >> 1) & mask) >> (n +1 +~1)) | (x << n);
 }
 /* 
  * greatestBitPos - return a mask that marks the position of the
